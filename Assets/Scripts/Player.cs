@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb2d;
 
+    public PlaneController planet;
+
     public float speed = 10;
 
     private int count;
@@ -26,6 +28,10 @@ public class Player : MonoBehaviour
         winText.text = "";
 
         SetCountText();
+    }
+
+    void Update() {
+        planet.Gravitate(transform);    
     }
 
     void FixedUpdate()

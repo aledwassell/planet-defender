@@ -6,26 +6,14 @@ public class PlanetController : MonoBehaviour
 {
     public float gravity = -10;
 
-    public GameObject[] gSubjects;
-
-    private void Awake()
-    {
-        gSubjects = GameObject.FindGameObjectsWithTag("gSubject");
-    }
-
-    void FixedUpdate()
-    {
-        foreach (GameObject gSubject in gSubjects)
-        {
-            Gravitate(gSubject.transform);
-        }
-    }
-
     public void Gravitate(Transform other)
     {
         Vector3 gravityUp = (other.position - transform.position).normalized;
-        Vector3 localUp = other.up;
+        Vector3 otherUp = other.up;
 
-        other.GetComponent<Rigidbody2D>().AddForce(gravityUp * gravity);
+        other.GetComponent<Rigidbody>().AddForce(gravityUp * gravity);
+
+        Quaternion targetRotation = Quaternion.FromRotation(otherUp, gravityUp) * other.rotation;
+        other.rotation = Quaternion.Slerp(other.rotation,targetRotation, 50 * Time.deltaTime);
     }
 }
