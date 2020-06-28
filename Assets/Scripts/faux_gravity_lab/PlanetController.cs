@@ -13,7 +13,7 @@ public class PlanetController : MonoBehaviour
 
         other.GetComponent<Rigidbody>().AddForce(gravityUp * gravity);
 
-        Quaternion targetRotation = Quaternion.FromRotation(otherUp, gravityUp) * other.rotation;
+        Quaternion targetRotation = Quaternion.FromToRotation(otherUp, gravityUp) * other.rotation;
         other.rotation = Quaternion.Slerp(other.rotation,targetRotation, 50 * Time.deltaTime);
     }
 }

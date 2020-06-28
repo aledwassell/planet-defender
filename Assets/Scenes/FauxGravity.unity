@@ -255,7 +255,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137049482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 8, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c47526add02491d846c5ace72905a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  target: {fileID: 291041573}
 --- !u!4 &265869847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4661435515762813124, guid: eb55bb60068844e6d977e5f000d486a0,
@@ -317,8 +317,8 @@ GameObject:
   - component: {fileID: 291041577}
   - component: {fileID: 291041576}
   - component: {fileID: 291041575}
-  - component: {fileID: 291041574}
   - component: {fileID: 291041579}
+  - component: {fileID: 291041574}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -338,9 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d607b27aa89e242e581217ba75f239a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -10
-  countText: {fileID: 0}
-  winText: {fileID: 0}
+  planet: {fileID: 537174339}
+  speed: 10
 --- !u!136 &291041575
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -410,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291041573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.58, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -812,7 +811,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -10
-  gSubjects: []
 --- !u!4 &561374435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8783306491909106419, guid: 2eb1fc0bc84694a14b244e969e599df7,
@@ -1147,7 +1145,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
