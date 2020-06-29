@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerLab : MonoBehaviour
 {
     private Rigidbody rb;
 
-    public PlanetController planet;
+    public PlanetControllerLab planet;
 
     public float speed = 10;
 
