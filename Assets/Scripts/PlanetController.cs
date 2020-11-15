@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class PlanetController : MonoBehaviour
 {
-    public float gravity = -10;
+    public CameraShake cameraShake;
+    public GameObject explosion;
 
-    public void Gravitate(Transform other)
+    void OnTriggerEnter(Collider other)
     {
-        Vector2 gravityUp = (other.position - transform.position).normalized;
-        Vector2 otherUp = other.up;
-
-        other.GetComponent<Rigidbody>().AddForce(gravityUp * gravity);
-
-        Quaternion targetRotation = Quaternion.FromToRotation(otherUp, gravityUp) * other.rotation;
-        other.rotation = Quaternion.Slerp(other.rotation, targetRotation, 50 * Time.deltaTime);
+        if (other.tag == "Bolt")
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "Asteroid")
+        {
+            StartCoroutine(cameraShake.Shake(.15f, .5f));
+        }
     }
 }

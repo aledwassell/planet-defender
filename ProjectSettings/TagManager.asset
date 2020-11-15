@@ -6,6 +6,11 @@ TagManager:
   tags:
   - PickUp
   - gSubject
+  - Boundry
+  - Planet
+  - Enemy
+  - Bolt
+  - Asteroid
   layers:
   - Default
   - TransparentFX
