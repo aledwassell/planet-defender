@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public event EventHandler OnSpacePressed;
-
-
-
-
     public float radius = 30;
     public GameObject hazard;
     public int hazardCount = 20;
@@ -19,23 +13,17 @@ public class GameController : MonoBehaviour
     public Vector2[] spawnValues;
     float rangeExtent = 100f;
 
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.Space)){
-            OnSpacePressed?.Invoke(this, EventArgs.Empty);
-        }
-    }
-
     void Start()
     {
         spawnValues = new[] {
-            // new Vector2(Random.Range(-rangeExtent, rangeExtent), 100),
-            // new Vector2(100, Random.Range(-rangeExtent, rangeExtent)),
-            // new Vector2(Random.Range(-rangeExtent, rangeExtent), -100),
-            // new Vector2(-100, Random.Range(-rangeExtent, rangeExtent)),
-            new Vector2(-100, 100),
+            new Vector2(Random.Range(-rangeExtent, rangeExtent), 100),
+            new Vector2(100, Random.Range(-rangeExtent, rangeExtent)),
+            new Vector2(Random.Range(-rangeExtent, rangeExtent), -100),
+            new Vector2(-100, Random.Range(-rangeExtent, rangeExtent)),
             };
         StartCoroutine(SpawnWaves());
     }
+
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
