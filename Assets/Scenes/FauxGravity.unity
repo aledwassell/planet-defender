@@ -775,7 +775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &446796744
 Transform:
   m_ObjectHideFlags: 0
@@ -1119,6 +1119,7 @@ GameObject:
   - component: {fileID: 537174335}
   - component: {fileID: 537174339}
   - component: {fileID: 537174341}
+  - component: {fileID: 537174342}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -1242,6 +1243,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -5
+--- !u!114 &537174342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537174334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf7df6f8d613cd43b300c5350a36aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faunaPrefabs:
+  - {fileID: 2222111361404534124, guid: 88f2fd29f58b9734683512546acec310, type: 3}
+  - {fileID: 4661435515762455780, guid: e289bf5debb17f6459818c207d781953, type: 3}
+  - {fileID: 4263922822445002727, guid: 3cdafb3c2f54d434894928d72d282874, type: 3}
+  - {fileID: 6239969156481229051, guid: b71b0f8d2f881c743a85228f3030d1cb, type: 3}
+  - {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133, type: 3}
+  - {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
+  - {fileID: 5202732821079448320, guid: 41f54b37ccdb041a7ad5d6364481c370, type: 3}
+  spawnCount: 150
 --- !u!4 &561374435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8783306491909106419, guid: 2eb1fc0bc84694a14b244e969e599df7,
