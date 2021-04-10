@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class DelayDestroy : MonoBehaviour
 {
-    private float lifeTime = 2.0f;
-     public void Start() {
-         Destroy(gameObject, lifeTime);
-     }
+    float lifeTime = 2.0f;
+
+    public void Start()
+    {
+        Destroy(gameObject, lifeTime);
+    }
 }

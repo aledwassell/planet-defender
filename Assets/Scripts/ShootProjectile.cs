@@ -7,10 +7,10 @@ public class ShootProjectile : MonoBehaviour
     public Rigidbody pfBolt;
     public float projectileVelocity = 20;
     public Transform projectileSpawn;
+    
     public float fireRate;
-    private float nextFire;
-
-    // Update is called once per frame
+    float nextFire;
+    
     void Update()
     {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
