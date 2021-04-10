@@ -6,16 +6,16 @@ using UnityEngine;
 public class SpawnFauna : MonoBehaviour
 {
     public GameObject[] faunaPrefabs;
-    public int spawnCount = 150;
+    int spawnCount;
 
     void Start()
     {
+        spawnCount = Random.Range(150, 500);
         for (int i = 0; i < spawnCount; i++)
         {
             Vector3 dir = Random.onUnitSphere;
             if (dir.z <= 0) SpawnObj(dir);
         }
-
     }
 
     void SpawnObj(Vector3 dir)

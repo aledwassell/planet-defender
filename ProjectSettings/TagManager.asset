@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Bolt
   - Asteroid
+  - Fauna
   layers:
   - Default
   - TransparentFX

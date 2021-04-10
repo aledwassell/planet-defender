@@ -8,7 +8,6 @@ public class GunController : MonoBehaviour
     private Vector3 lookDirection;
     private float lookAngle;
 
-    // Update is called once per frame
     void Update()
     {
         lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

@@ -15,7 +15,7 @@ public class DestroyByContact : MonoBehaviour
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
         }
         Destroy(gameObject);
-        if (other.tag == "Planet") return;
+        if (other.tag == "Planet" || other.tag == "Fauna") return;
         Destroy(other.gameObject);
     }
 }
