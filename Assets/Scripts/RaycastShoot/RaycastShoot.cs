@@ -17,7 +17,7 @@ public class RaycastShoot : MonoBehaviour
     
     void Start()
     {
-        laserLine = GetComponent<LineRenderer>();
+        laserLine = GetComponent<>();
         gunAudio = GetComponent<AudioSource>();
     }
 
@@ -27,7 +27,17 @@ public class RaycastShoot : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             StartCoroutine(ShotEffect());
-            Vector3 rayOigin
+            Vector3 rayOrigin = gunEnd.position;
+            RaycastHit hit;
+            laserLine.SetPosition(0, rayOrigin);
+            if (Physics.Raycast(rayOrigin, gunEnd.up, out hit, weaponRange))
+            {
+                laserLine.SetPosition(1, hit.point);
+            }
+            else
+            {
+                laserLine.SetPosition(1, rayOrigin + (gunEnd.transform.up * weaponRange));
+            }
         }
 
     }
