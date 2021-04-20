@@ -17,7 +17,7 @@ public class RaycastShoot : MonoBehaviour
     
     void Start()
     {
-        laserLine = GetComponent<>();
+        laserLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
     }
 
@@ -44,7 +44,6 @@ public class RaycastShoot : MonoBehaviour
 
     IEnumerator ShotEffect()
     {
-        gunAudio.Play();
         laserLine.enabled = true;
         yield return shotDuration;
         laserLine.enabled = false;
