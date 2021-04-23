@@ -16,7 +16,7 @@ public class SpawnFauna : MonoBehaviour
             Vector3 dir = Random.onUnitSphere;
             // Only spawn fauna on the side of the planet that faces the camera.
             if (dir.z > 0) dir = (dir * -1); // Flip z position if it is positive.
-            // SpawnObj(dir);
+            SpawnObj(dir);
         }
     }
 
