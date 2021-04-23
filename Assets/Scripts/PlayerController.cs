@@ -19,15 +19,15 @@ public class PlayerController : MonoBehaviour
         float mHorizontal = Input.GetAxis("Horizontal");
         float mVertical = Input.GetAxis("Vertical");
 
-        Vector3 move3d = new Vector3(mHorizontal, 0, 0).normalized;
+        Vector2 move2d = new Vector2(mHorizontal, 0).normalized;
 
-        rb.MovePosition(rb.position + transform.TransformDirection(move3d) * playerSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + transform.TransformDirection(move2d) * (playerSpeed * Time.deltaTime));
     }
 
     private void OnCollisionEnter(Collision other)
     {
         // We don't want the player geometry to move, so ignore collisions from trees and rocks.
-        if (other.gameObject.tag != "Planet")
+        if (!other.gameObject.CompareTag("Planet"))
         {
             Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
         }
