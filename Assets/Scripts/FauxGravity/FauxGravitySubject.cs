@@ -6,6 +6,7 @@ public class FauxGravitySubject : MonoBehaviour
 {
     Rigidbody rb;
     FauxGravityBody planetCtrl;
+    public float gravity = -5;
 
     void Start()
     {
@@ -16,6 +17,6 @@ public class FauxGravitySubject : MonoBehaviour
 
     void FixedUpdate()
     {
-        planetCtrl.Gravitate(transform);
+        planetCtrl.Gravitate(transform, rb, gravity);
     }
 }
