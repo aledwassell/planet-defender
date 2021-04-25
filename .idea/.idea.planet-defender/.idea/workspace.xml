@@ -26,8 +26,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3DA1D2DC-E5E9-4BC4-B24A-875CC1C7C8A7/06/b29c62c1/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/2d_controllers/2d_PlanetController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3DA1D2DC-E5E9-4BC4-B24A-875CC1C7C8A7/5a/37148f26/LineRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/aledwassell/games/planet-defender/Assets/Scenes/3D_game.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/2d_controllers/2d_PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3DA1D2DC-E5E9-4BC4-B24A-875CC1C7C8A7/5a/37148f26/LineRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3DA1D2DC-E5E9-4BC4-B24A-875CC1C7C8A7/b1/f8a42f83/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
