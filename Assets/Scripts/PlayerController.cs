@@ -1,27 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
-    public float playerSpeed = 20;
+    public float playerSpeed = 20f;
+    Rigidbody2D rb;
+    private Vector2 movement;
 
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
-        rb.useGravity = false;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        movement.x = Input.GetAxis("Horizontal");
     }
 
     void FixedUpdate()
     {
-        float mHorizontal = Input.GetAxis("Horizontal");
-        float mVertical = Input.GetAxis("Vertical");
-
-        Vector2 move2d = new Vector2(mHorizontal, 0).normalized;
-
-        rb.MovePosition(rb.position + transform.TransformDirection(move2d) * (playerSpeed * Time.deltaTime));
+        rb.AddRelativeForce(Vector2.right * movement * playerSpeed);
     }
 
     private void OnCollisionEnter(Collision other)

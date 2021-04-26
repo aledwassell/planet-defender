@@ -65,7 +65,7 @@ Material:
     - _EmissionScaleUI: 0
     - _EmissiveIntensity: 0
     - _FurLength: 0.104
-    - _Glossiness: 0.083
+    - _Glossiness: 0.133
     - _GravityStrength: 0.601
     - _Metallic: 0
     - _Mode: 0

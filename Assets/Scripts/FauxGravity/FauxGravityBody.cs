@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FauxGravityBody : MonoBehaviour
 {
-    public void Gravitate(Transform other, Rigidbody rb, float gravity)
+    public void Gravitate(Transform other, Rigidbody2D rb, float gravity)
     {
-        Vector3 gravityUp = (other.position - transform.position).normalized;
-        Vector3 otherUp = other.up;
+        Vector2 gravityUp = (other.position - transform.position).normalized;
+        Vector2 otherUp = other.up;
 
         rb.AddForce(gravityUp * gravity);
 
