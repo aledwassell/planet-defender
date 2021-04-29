@@ -314,7 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d607b27aa89e242e581217ba75f239a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 15
+  playerSpeed: 25
+  rb: {fileID: 291041575}
 --- !u!50 &291041575
 Rigidbody2D:
   serializedVersion: 4
@@ -328,7 +329,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -452,10 +453,10 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291041573}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -473,7 +474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e985bd49c76460f4bab590e8e6560fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -500
+  gravity: -100
 --- !u!1 &336780863
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +564,7 @@ GameObject:
   - component: {fileID: 537174337}
   - component: {fileID: 537174336}
   - component: {fileID: 537174335}
+  - component: {fileID: 537174340}
   - component: {fileID: 537174339}
   - component: {fileID: 537174341}
   - component: {fileID: 537174342}
@@ -668,6 +670,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 137049486}
   explosion: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
+--- !u!58 &537174340
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537174334}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &537174341
 MonoBehaviour:
   m_ObjectHideFlags: 0

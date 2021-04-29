@@ -6,13 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float playerSpeed = 20f;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Vector2 movement;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void Update()
     {
