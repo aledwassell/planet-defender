@@ -5,9 +5,9 @@ using UnityEngine;
 public class AsteroidRotator : MonoBehaviour
 {
     public float tumble = 10;
-    Rigidbody2D rb;
+    public Rigidbody rb;
+    
     void Start() {
-        rb = GetComponent<Rigidbody2D>();
-        // rb.angularVelocity = Random.insideUnitSphere * tumble;
+        rb.angularVelocity = Random.insideUnitSphere * tumble;
     }
 }
