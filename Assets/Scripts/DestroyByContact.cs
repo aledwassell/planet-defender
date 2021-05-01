@@ -7,7 +7,6 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
-    public GameManager gm;
 
     void OnTriggerEnter2D(Collider2D other)
     {
