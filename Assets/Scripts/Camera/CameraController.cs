@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (!target) return;
         transform.position = target.transform.position + offset;
     }
 }

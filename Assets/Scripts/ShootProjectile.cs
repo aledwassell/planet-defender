@@ -13,11 +13,9 @@ public class ShootProjectile : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
-        {
-            nextFire = Time.time + fireRate;
-            Rigidbody2D projectile = Instantiate(pfBolt, projectileSpawn.position, projectileSpawn.rotation);
-            projectile.velocity = projectileSpawn.up * projectileVelocity;
-        }
+        if (!Input.GetButton("Fire1") || Time.time < nextFire) return;
+        nextFire = Time.time + fireRate;
+        Rigidbody2D projectile = Instantiate(pfBolt, projectileSpawn.position, projectileSpawn.rotation);
+        projectile.velocity = projectileSpawn.up * projectileVelocity;
     }
 }
