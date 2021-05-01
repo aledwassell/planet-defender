@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BoltMover : MonoBehaviour
 {
-    Rigidbody rb;
+    Rigidbody2D rb;
     float velocity = 20;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector3.up * velocity;
     }
 }
