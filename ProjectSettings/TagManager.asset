@@ -6,12 +6,12 @@ TagManager:
   tags:
   - PickUp
   - gSubject
-  - Boundry
   - Planet
   - Enemy
   - Bolt
   - Asteroid
   - Fauna
+  - Boundary
   layers:
   - Default
   - TransparentFX

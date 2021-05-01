@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class SpawnAsteroids : MonoBehaviour
 {
     public float radius = 30;
     public GameObject hazard;
