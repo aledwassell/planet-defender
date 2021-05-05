@@ -1213,7 +1213,7 @@ GameObject:
   - component: {fileID: 1899758114}
   m_Layer: 0
   m_Name: DestroyBoundry
-  m_TagString: Boundry
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1230,8 +1230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e37df6876293d174eb070215c218f442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!58 &1899758115
-CircleCollider2D:
+--- !u!68 &1899758115
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1244,8 +1244,14 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 100
+  m_EdgeRadius: 100
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!4 &1899758116
 Transform:
   m_ObjectHideFlags: 0

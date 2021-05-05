@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,9 +20,25 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameOver = false;
+        restart = false;
+        playerDestroyed = false;
         UpdateScore();
     }
-    
+
+    private void Update()
+    {
+        if(restart){
+            if(Input.GetKeyDown(KeyCode.R)){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                score = 0;
+            }
+        }
+        if(Input.GetKey("escape")){
+            Application.Quit();
+        }
+    }
+
     private void UpdateScore()
     {
         scoreText.text = lives + ":" + score;
@@ -34,8 +51,9 @@ public class GameManager : MonoBehaviour
         if (lives == 0)
         {
             GameOver();
-            playerDestroyed = true;
+            return;
         }
+        playerDestroyed = true;
     }
 
     public void AddScore()

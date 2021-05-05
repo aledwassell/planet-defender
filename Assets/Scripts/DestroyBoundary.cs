@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DestroyBoundary : MonoBehaviour
 {
-    private void OnTriggerExit(Collider other) {
-        Debug.Log(other.tag);
+    private void OnTriggerExit2D(Collider2D other) {
         Destroy(other.gameObject);
     }
 }
