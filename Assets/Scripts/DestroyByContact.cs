@@ -7,8 +7,16 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject playerExplosion;
-    public GameManager gm;
-
+    private GameManager gm;
+    
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+        if(gm == null){
+            Debug.Log("Cannot find the game manager!");
+        }
+    }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Boundary")) return;
@@ -16,6 +24,11 @@ public class DestroyByContact : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+            gm.RemoveLife();
+        }
+        if (other.CompareTag("Bolt"))
+        {
+            gm.AddScore();
         }
         Destroy(gameObject);
         if (other.CompareTag("Planet") || other.CompareTag("Fauna")) return;
