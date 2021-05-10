@@ -8,12 +8,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
-    private int score = 0;
-    public int lives = 3;
-    
+    static int score;
+    static int lives = 3;
+
+    public float startWait = 2f;
+
     public Text restartText;
     public Text gameoverText;
-    
+
     private bool gameOver;
     private bool restart;
     private bool playerDestroyed;
@@ -23,19 +25,43 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         restart = false;
         playerDestroyed = false;
+        StartCoroutine(WatchPlayer());
         UpdateScore();
     }
 
     private void Update()
     {
-        if(restart){
-            if(Input.GetKeyDown(KeyCode.R)){
+        if (restart)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 score = 0;
             }
         }
-        if(Input.GetKey("escape")){
+        if (Input.GetKey("escape"))
+        {
             Application.Quit();
+        }
+    }
+
+    IEnumerator WatchPlayer()
+    {
+        while (true)
+        {
+            if (gameOver)
+            {
+                restartText.text = "Press 'R' for Restart";
+                restart = true;
+                break;
+            }
+
+            if (playerDestroyed)
+            {
+                yield return new WaitForSeconds(startWait);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            yield return new WaitForSeconds(5);
         }
     }
 
@@ -61,10 +87,12 @@ public class GameManager : MonoBehaviour
         score++;
         UpdateScore();
     }
-    
-    public void GameOver(){
+
+    public void GameOver()
+    {
         gameoverText.text = "Game Over!";
         gameOver = true;
         lives = 3;
+        scoreText.text = "";
     }
 }
