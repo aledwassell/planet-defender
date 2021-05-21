@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class SpawnAsteroids : MonoBehaviour
 {
-    public float radius = 30;
+    public float radius = 75;
     public GameObject hazard;
-    public int hazardCount = 20;
+    public int hazardCount = 50;
     public float spawnWait = 0.5f;
     public float startWait = 2f;
     public float waveWait = 5f;
-    public Vector2[] spawnValues;
-    float rangeExtent = 100f;
 
     void Start()
     {
-        spawnValues = new[] {
-            new Vector2(Random.Range(-rangeExtent, rangeExtent), 100),
-            new Vector2(100, Random.Range(-rangeExtent, rangeExtent)),
-            new Vector2(Random.Range(-rangeExtent, rangeExtent), -100),
-            new Vector2(-100, Random.Range(-rangeExtent, rangeExtent)),
-            };
         StartCoroutine(SpawnWaves());
     }
 
@@ -29,11 +21,9 @@ public class SpawnAsteroids : MonoBehaviour
         yield return new WaitForSeconds(startWait);
         while (true)
         {
-            int p = 0;
             for (int i = 0; i < hazardCount; i++)
             {
-                InstantiateHazard(spawnValues[p]);
-                if (p < spawnValues.Length - 1) { p++; } else { p = 0; }
+                InstantiateHazard(CreateRandomRadiusPos());
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
@@ -43,5 +33,10 @@ public class SpawnAsteroids : MonoBehaviour
     void InstantiateHazard(Vector2 position)
     {
         Instantiate(hazard, position, Quaternion.identity);
+    }
+
+    Vector2 CreateRandomRadiusPos(){
+        float angle = Random.Range(0, 360);
+        return new Vector2(radius * Mathf.Cos(angle), radius * Mathf.Sin(angle));
     }
 }
